@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
+title: darkcityの博客
+subtitle: 砥砺前行,任轻而道远
+description: pc、移动端、小程序、js、jquery、bootstrap、vue、webpack、
 keywords:
-author: John Doe
-language: en
+author: darkcity_x
+language: zh-CN
 timezone:
 
 # URL
@@ -79,5 +79,5 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:darkcityX/myBlog.github.io.git
+  repo: https://github.com/darkcityX/myBlog.github.io.git
   branch: master
