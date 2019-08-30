@@ -5,7 +5,7 @@
 menu:
     home: /
     archive: /archives
-    categories: /categories
+    categories: /categories/index.html
     tags: /tags
     about: /about
     gallery: /gallery
@@ -13,7 +13,7 @@ menu:
 # 设置favicon和logo的路径即可
 # 你可以使用文字logo或图片logo，即logo的值为空时，主题使用title的值作为logo！
 favicon: /img/favicon.ico
-logo: /img/logo_c.png
+logo: /img/logo_f.png
 title: Welcome 
 
 # background_image
@@ -46,12 +46,13 @@ preloader:
     animation: cyclic
 
 #########################################################################################################
-# 003-INDEX
+# 003-首页的使用
 #########################################################################################################
+# 首页文章展示有两种模式：图文模式cart和纯净模式pure。默认图文模式（cart），你只需编辑主题配置文件，设置index-style的参数，即可使用或扩展指定的主页文章展示模式
 # index-style: pure | cart
 index_style: cart
 
-# index_cart_cover
+# 文章封面图 Cover参数值即为图片路径，路径可为相对路径或绝对路径。
 cover: /img/cart_cover.jpg
 lazy_image: /img/placeholder.jpg
 
