@@ -5,7 +5,7 @@
 menu:
     home: /
     archive: /archives
-    categories: /categories/index.html
+    categories: /categories
     tags: /tags
     about: /about
     gallery: /gallery
@@ -50,10 +50,10 @@ preloader:
 #########################################################################################################
 # 首页文章展示有两种模式：图文模式cart和纯净模式pure。默认图文模式（cart），你只需编辑主题配置文件，设置index-style的参数，即可使用或扩展指定的主页文章展示模式
 # index-style: pure | cart
-index_style: cart
+index_style: pure
 
 # 文章封面图 Cover参数值即为图片路径，路径可为相对路径或绝对路径。
-cover: /img/cart_cover.jpg
+cover: /img/bg.jpg
 lazy_image: /img/placeholder.jpg
 
 #########################################################################################################
