@@ -12,5 +12,5 @@ categories: webpack
 
 ### 2、学习导图预览：
 
-![webpack思维导图一览图](/images/webpack.jpeg)
+![webpack思维导图一览图](/images/webpack/webpack01.jpeg)
 
