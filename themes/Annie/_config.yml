@@ -62,7 +62,7 @@ lazy_image: /img/placeholder.jpg
 # post_relate
 relate:
     enable: true
-    posts_limit: 10
+    posts_limit: 5
     posts_excerpt: 120
 
 # post_comment
