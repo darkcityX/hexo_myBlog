@@ -1,6 +1,7 @@
 ---
 title: 项目中css常用代码
 date: 2019-09-05 12:26:44
+cover: /images/css/css_fengmian01.jpg
 tags: css
 categories: css
 ---

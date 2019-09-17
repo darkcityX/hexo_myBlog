@@ -1,6 +1,7 @@
 ---
 title: 常用css样式类
 date: 2019-09-05 11:37:00
+cover: /images/css/css_fengmian01.jpg
 tags: css
 categories: css
 ---
