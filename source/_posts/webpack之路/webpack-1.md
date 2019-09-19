@@ -1,6 +1,7 @@
 ---
-title: webpack之路(一)——webpack总览
+title: webpack之路(一)之webpack总览
 date: 2019-09-05 15:24:43
+cover: /images/webpack/webpack_fengmian01.jpg
 tags: webpack
 categories: webpack
 ---
