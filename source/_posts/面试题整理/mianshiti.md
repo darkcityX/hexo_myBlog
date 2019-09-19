@@ -21,10 +21,12 @@ categories: 面试题整理
 
     垂直水品居中的办法挺多。我做的网站比较偏向移动端，所以支持性都比较好。主要使用的是translate居中定位。经测试，发现只适用与IE9及其以上版本。
 ```css
+.centered{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+}
 ```
 
 #### 2、flex布局中如何居中定位？
@@ -39,7 +41,6 @@ categories: 面试题整理
 ```
 
 ```css
-
     .box {
         display: flex;
         justify-content: center; /* 水平居中 */
@@ -59,11 +60,12 @@ categories: 面试题整理
 #### 3、如何使用css画三角形？
 
 ```css
-    width: 0;                   //0可以去掉块级元素的宽度
-    border:  55px solid red;    //设置边框，默认是所有边框都有值，所以此时会显示正方形
-    border-color: transparent;  //用透明色，会使块级元素在视觉中消失
-    border-bottom-color: green; //给bottom边框添加颜色为正三角、给top添加为下三角、...
-
+.triangle{
+    width: 0;                   /* - 0可以去掉块级元素的宽度 - */
+    border:  55px solid red;    /* - 设置边框，默认是所有边框都有值，所以此时会显示正方形 - */
+    border-color: transparent;  /* - 用透明色，会使块级元素在视觉中消失 - */
+    border-bottom-color: green; /* - 给bottom边框添加颜色为正三角、给top添加为下三角 - */
+}
 ```
 
 #### 4、如何处理单行文本溢出缩略显示、多行文本溢出缩略显示？
@@ -105,12 +107,12 @@ categories: 面试题整理
 
     转自： https://www.cnblogs.com/pssp/p/5216085.html
     this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象(这句话具体理解会有些错误)。
-----
-    四条定律：
-        1).函数执行，首先看函数名前面是否有"."，有的话"."前面是谁就是谁；没有的话this就是window;
-        2).自执行函数中的this永远是window
-        3).给元素的某一个事件绑定方法，当事件触发的时候，执行对应的方法，方法中的this是当前的元素
-        4).在构造函数模式中，类中（函数体中）出现的this.xxx = xxx;中的this是当前类的一个实例
+四条定律：  
+  + 函数执行，首先看函数名前面是否有"."，有的话"."前面是谁就是谁；没有的话this就是window;
+  + 自执行函数中的this永远是window
+  + 给元素的某一个事件绑定方法，当事件触发的时候，执行对应的方法，方法中的this是当前的元素
+  + 在构造函数模式中，类中（函数体中）出现的this.xxx = xxx;中的this是当前类的一个实例
+
 
 
 
