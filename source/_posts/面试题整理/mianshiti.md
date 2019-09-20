@@ -105,7 +105,8 @@ categories: 面试题整理
 
 #### 1、原生js中的this指向问题？(这个问题会在原生javascript进行专题研究)
 
-    转自： https://www.cnblogs.com/pssp/p/5216085.html
+    转自： https://www.cnblogs.com/pssp/p/5216085.html  
+    
     this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象(这句话具体理解会有些错误)。
 四条定律：  
   + 函数执行，首先看函数名前面是否有"."，有的话"."前面是谁就是谁；没有的话this就是window;
