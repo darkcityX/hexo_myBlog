@@ -38,15 +38,15 @@ categories: webpack
 
     // 引入node模块：处理路径的。
     const path = require("path");
-
-    modeule.exports = {
+    
+    module.exports = {
         /**
          * 1. 模式：影响webpack本身的功能。在js输出时，可以使用【 process.env.NODE_ENV 】。其值有三类：
          *      development : 开发模式。会保留最完整的调试信息，不会对文件进行压缩，方便开发。
          *      production : 生产模式。会进行压缩。
          *      none: 无。
         */
-        mode: 'development'
+        mode: 'development',
         /**
          * 2. 入口文件： 告诉webpack从哪个文件开始编译。可以是多文件也可以是单文件。
          *      注意：在本地引入的时候，最后加  ./   这遵循的是node的处理文件的方式。
@@ -69,7 +69,7 @@ categories: webpack
 //  多文件配置：
 const path = require("path");
 
-moudle.exprots = {
+module.exports = {
     mode: 'development',
     entry: {
         index: './src/index',
