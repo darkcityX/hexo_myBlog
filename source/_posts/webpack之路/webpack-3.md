@@ -155,10 +155,212 @@ autoprefixer: 内置了标准的前缀标准表，自动根据浏览器支持情
 
 #### 3、file-loader、url-loader
 
+##### 3.1). file-loader
+
+    npm i file-loader -D
+
+---
+
+    file-loader: 将文件(eg:图片文件、字体文件...)也编译到js种(包括直接引用、也包括css引用)
+
+```javascript
+
+const path = require('path');
+
+module.exports = {
+    mode: 'development',
+    entry: './src/js/index.js',
+    output: {
+        path: path.resolve(__dirname,'dest'),
+        filename: 'bundle.min.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(img|png|image|gif)$/i,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: 'imgs/',        // 相当于打包后的相对路径
+                        publicPath: 'dest/imgs/'    // 输出到css中的路径
+                    }
+                }                
+            }
+        ]
+    }
+}
+
+```
+
+##### 3.2). url-loader
+
+    npm i url-loader -D
+
+---
+
+    注意：功能和作用和file-loader类似，但多了options中的参数设置，可以对文件大小等进行参数设置处理。在使用url-loader时，也需要引入file-loader，因为url-loader是基于file-loader的。
+
+```javascript
+const path = require('path');
+
+module.exports = {
+    mode: 'development',
+    entry: './src/js/index.js',
+    output: {
+        path: path.resolve(__dirname,'dest'),
+        filename: 'bundle.min.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(img|png|image|gif)$/i,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        outputPath: 'imgs/',        // 相当于打包后的相对路径
+                        publicPath: 'dest/imgs/',   // 输出到css中的路径
+                        limit: 8*1024               // 大于8*1024的依旧使用file-loader在打包时存储为图片、小于的以base64进行处理
+                    }
+                }                
+            },
+            // 处理字体图标的文件: 与上面的是可以合并的
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)/i,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        output: 'fonts/',
+                        publicPath: 'dest/fonts/',
+                        limit: 4*1024
+                    }
+                }
+            }
+        ]
+    }
+}
+
+```
+
 #### 4、less-loader
+    npm i less-loader less -D
+---
+  less-loader: 让webpack可以访问less的功能，并不具备解析less的功能。
+  
+  less: less文件的核心文件、可以解析less语法。 
+
+``` javascript
+
+const path = require('path');
+
+module.exports = {
+    mode: 'development',
+    entry: './src/js/index.js',
+    output: {
+        path: path.resolve(__dirname,'dest'),
+        filename: 'bundle.min.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.less$/i,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [
+                                require("autoprefixer")
+                            ]
+                        }
+                    },
+                    'less-loader'
+                ]
+            } 
+        ]
+    }
+}
+
+```
 
 #### 5、babel-loader
 
+  npm i babel-loader @babel/core @babel/preset-env -D
+
+---
+babel-loader：
+
+@babel/core: 
+
+@babel/preset-env:
+
+```javascript
+
+const path = require('path');
+
+module.exports = {
+    mode: 'development',
+    entry: './src/js/index.js',
+    output: {
+        path: path.resolve(__dirname,'dest'),
+        filename: 'bundle.min.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx)$/i,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            }
+        ]
+    }
+}
+
+```
+注意：当文件报错后，调试起来比较麻烦，看到的是编译后的代码,这就引申出了sourcemap。
 
 ### 三、开启sourcemap
+    开启调试工具。现在浏览器都自带的一个解析.map的文件的调试工具
+ - 打开后会自动生成一个.map的文件
+ - 浏览器在解析文件时，会优先寻找.map的文件进行解析
+
+webpack.config.js
+```javascript
+
+const path = require('path');
+
+module.exports = {
+    mode: 'development',
+    entry: './src/js/index.js',
+    output: {
+        path: path.resolve(__dirname,'dest'),
+        filename: 'bundle.min.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx)$/i,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            }
+        ]
+    },
+    // 开启调试工具
+    devtool:'source-map'
+}
+
+```
+
+![webpack思维导图一览图](/images/webpack/webpack_babel1.png)
+---
+![webpack思维导图一览图](/images/webpack/webpack_babel2.jpg)
+
 
