@@ -7,9 +7,9 @@ categories: webpack
 ---
 
 ### 1、前期准备技能：
-    ES6
-    正则表达式
-    Node.js: Node.js基本使用/npm及Node.js包管理
+ - ES6
+ - 正则表达式
+ - Node.js: Node.js基本使用/npm及Node.js包管理
 
 ### 2、学习导图预览：
 
